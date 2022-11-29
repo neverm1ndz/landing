@@ -973,6 +973,116 @@ h6 {
   color: #32435C;
 }
 
+.pricing {
+  margin-bottom: 8.75rem;
+}
+
+.pricing__header:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.pricing__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
+}
+
+.item-pricing {
+  text-transform: capitalize;
+  border: 1px solid #EDEDED;
+  -webkit-filter: drop-shadow(0px 20px 40px rgba(191, 191, 191, 0.16));
+          filter: drop-shadow(0px 20px 40px rgba(191, 191, 191, 0.16));
+  border-radius: 0.3125rem;
+  padding: 3.125rem;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-box-shadow 0.7s ease 0s;
+  transition: -webkit-box-shadow 0.7s ease 0s;
+  -o-transition: box-shadow 0.7s ease 0s;
+  transition: box-shadow 0.7s ease 0s;
+  transition: box-shadow 0.7s ease 0s, -webkit-box-shadow 0.7s ease 0s;
+}
+
+.item-pricing__title {
+  line-height: 1.1666666667;
+}
+
+.item-pricing__title:not(:last-child) {
+  margin-bottom: 1.3125rem;
+}
+
+.item-pricing__price {
+  line-height: 1.1666666667;
+  font-weight: 700;
+}
+
+.item-pricing__price:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.item-pricing__list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.item-pricing__list:not(:last-child) {
+  margin-bottom: 3.0625rem;
+}
+
+.item-pricing__element {
+  font-size: 1rem;
+  line-height: 100%;
+  color: #514040;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.item-pricing__element::before {
+  content: "";
+  display: inline-block;
+  background: url("../img/icons/check.svg") 0 0 no-repeat;
+  position: absolute;
+  top: 0.125rem;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.item-pricing__button {
+  color: #514040;
+  border: 1px solid #514040;
+  border-radius: 0.3125rem;
+  line-height: 1.1666666667;
+  padding: 1.125rem 3.25rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -1150,6 +1260,18 @@ h6 {
   .item-slide {
     row-gap: 1.25rem;
   }
+
+  .item-pricing__title {
+    font-size: 1.875rem;
+  }
+
+  .item-pricing__price {
+    font-size: 3.75rem;
+  }
+
+  .item-pricing__list {
+    row-gap: 1rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -1250,6 +1372,18 @@ h6 {
   .item-slide {
     row-gap: 0.9375rem;
   }
+
+  .item-pricing__title {
+    font-size: 1.5rem;
+  }
+
+  .item-pricing__price {
+    font-size: 2rem;
+  }
+
+  .item-pricing__list {
+    row-gap: 0.75rem;
+  }
 }
 
 @media (max-width: 68.75em) {
@@ -1266,6 +1400,18 @@ h6 {
 @media (max-width: 61.99875em) {
   .link-actions__text {
     font-weight: 700;
+  }
+
+  .pricing__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .pricing__item {
+    width: 70%;
+    margin: 0 auto;
   }
 }
 
@@ -1419,6 +1565,10 @@ h6 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+
+  .pricing__item {
+    width: 100%;
+  }
 }
 
 @media (max-width: 47.99875em) and (max-width: 20em) {
@@ -1492,6 +1642,10 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .item-pricing__button {
+    text-align: center;
   }
 }
 
@@ -1787,6 +1941,42 @@ h6 {
       row-gap: calc(0.9375rem + 0.3125 * (100vw - 20rem) / 55);
     }
 }
+
+@supports (font-size: clamp( 1.5rem , 1.3636363636rem  +  0.6818181818vw , 1.875rem )) {
+    .item-pricing__title {
+      font-size: clamp( 1.5rem , 1.3636363636rem  +  0.6818181818vw , 1.875rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.5rem , 1.3636363636rem  +  0.6818181818vw , 1.875rem )) {
+    .item-pricing__title {
+      font-size: calc(1.5rem + 0.375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (font-size: clamp( 2rem , 1.3636363636rem  +  3.1818181818vw , 3.75rem )) {
+    .item-pricing__price {
+      font-size: clamp( 2rem , 1.3636363636rem  +  3.1818181818vw , 3.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 2rem , 1.3636363636rem  +  3.1818181818vw , 3.75rem )) {
+    .item-pricing__price {
+      font-size: calc(2rem + 1.75 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (row-gap: clamp( 0.75rem , 0.6590909091rem  +  0.4545454545vw , 1rem )) {
+    .item-pricing__list {
+      row-gap: clamp( 0.75rem , 0.6590909091rem  +  0.4545454545vw , 1rem );
+    }
+}
+
+@supports not (row-gap: clamp( 0.75rem , 0.6590909091rem  +  0.4545454545vw , 1rem )) {
+    .item-pricing__list {
+      row-gap: calc(0.75rem + 0.25 * (100vw - 20rem) / 55);
+    }
+}
 }
 
 @media (max-width: 47.99875em) and (min-width: 47.99875em) {
@@ -1891,6 +2081,19 @@ h6 {
 
   .item-portfolio__link:hover {
     text-decoration: underline;
+  }
+
+  .item-pricing:hover {
+    -webkit-box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1);
+            box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1);
+  }
+
+  .item-pricing__button:hover {
+    border: 1px solid #49AD09;
+    color: #fff;
+    background-color: #49AD09;
+    -webkit-box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259), 0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05), 0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
+            box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259), 0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05), 0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
   }
 }
 
